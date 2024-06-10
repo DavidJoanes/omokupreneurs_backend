@@ -270,7 +270,7 @@ module.exports = functions = {
         const ipAddress = req.socket.remoteAddress;
         try {
             var adminExist = await adminModel.findOne({ emailAddress: data.emailAddress })
-            if (data.operation == "login" || data.operation == "reset_password") {
+            if (data.operation == "login" || data.operation == "password reset") {
                 if (!adminExist) {
                     var newLog = logModel({
                         logType: "admin",
